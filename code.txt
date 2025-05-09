@@ -1,0 +1,338 @@
+HTML = 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday gift</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+
+    <div class="container">
+
+        <h2 id="text"> Click the Gift Box </h2>
+
+        <br> <br>
+
+        <img id="gift" src="gift box 2.png" alt="gift box">
+
+       
+        <br>
+        <br>
+        <button id="suprisebtn">Click me to open gift</button>
+        
+        
+        <div id="card"  class="hidden">
+
+            <div class="outside">
+
+                <div class="front">
+
+                    <p> Happy birthday </p>
+                    <div class="cake">
+                        <div class="to-layer"></div>
+                    </div>
+
+                </div>
+
+                <div class="back">
+
+
+                       
+
+                </div>
+
+            </div>
+
+
+            <div class="inside">
+
+                <br>
+
+                <p> wishing you a day filled with joy.laughter,and unforgettable memories. May this year bring you success,love and everything your heart desires.
+                    <br><br>
+
+                    <br><br>
+
+            
+               <b style="text-transform:capitalize ;"> Happy Birthday to someone truly special! </b>
+                <hr>
+                <br>
+
+                ---------------------------------------------------------------------   
+
+                The birthday card is made by Charvin jayeshbhai shah using HTML, CSS, JS...specially for you.
+                i hope you liked it.
+                </p>
+
+                <p style="text-align: center;"> રાધે રાધે</p>
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+    </div>
+
+    
+
+
+
+
+
+
+
+</body>
+
+    <script src="script.js">  </script>
+
+</html>
+
+
+
+
+
+CSS= 
+
+*{
+
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+
+}
+
+
+body{
+
+    background-color: #ffe2e2;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    height :100vh;
+   
+}
+
+.container{
+
+   
+    text-align: center;
+   
+}
+
+#text{
+
+    text-transform:capitalize;
+    font-family: 'Segoe UI',  sans-serif;
+    font-size: 35px;
+
+}
+
+#gift{
+
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+  
+    
+
+}
+
+#gift:hover{
+
+    transform: scale(1.3);
+   
+
+}
+
+
+#card{
+
+    background-color: #ffe2e2;
+    width: 840px;
+    height: 500px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+
+
+}
+
+#card:hover{
+
+    transform: rotate(-5deg);
+  
+
+}
+
+#card:hover .outside{
+
+    transform: rotateY(-130deg);
+
+}
+
+
+
+.outside,.inside{
+
+    border :1px solid black;
+    height:100%;
+    width: 50%;
+    position: absolute;
+    left:50.1%;
+}
+
+.inside{
+
+   
+    background: linear-gradient(
+        to right,
+        white, white 30%
+    );
+
+    line-height:30px;
+    padding: 0 20px ;
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+
+
+}
+
+
+.outside{
+
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index : 1;
+    transform-origin: left;
+    transition: 2s;
+  
+
+
+}
+
+.front,
+.back{
+
+    height: 100%;
+    width:100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+
+
+}
+
+
+.front{
+
+    background-color: white;
+
+}
+
+.back{
+
+   transform : rotateY(180deg);
+   background: linear-gradient(
+        to right,
+        white, white 30%
+    );
+
+
+
+}
+
+.cake{
+
+    width: 100px;
+    position:absolute;
+    bottom:0;
+}
+
+.top-layer{
+
+    height: 80px;
+    width: 240px;
+    background-repeat: repeat;
+    background-size: 60px, 100px;
+    background-image: :linear-gradient(
+        transparent 50px,
+        #feddad 50px,
+        #feddad 60px,
+        transparent 60px,  
+
+    ),
+
+    radial-gradient(cricle at 30px 5px, #994c10 30px, #fcbf29 31px);
+    border-radius: 10px 10px 0  0;
+    position : :relative;
+    margin:auto;
+
+}
+
+
+.outside p{
+
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-top: 30%;
+    text-align: center;
+    letter-spacing: 6px;
+    color: #000046;
+
+}
+
+.hidden{
+
+    display : none;
+    /* margin-top: 20px; */
+    background-color: black;
+
+
+}
+
+
+
+
+js =
+
+const suprisebtn = document.getElementById('suprisebtn');
+const card = document.getElementById('card');
+
+suprisebtn.addEventListener('click', () => {
+    
+    card.classList.toggle('hidden');
+    
+});
+
+
+
+
+
+
+
+i can created the project but it not responsive in mobile.
+
+i want it to responsive in all divice 
